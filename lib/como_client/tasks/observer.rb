@@ -3,7 +3,7 @@ module COMOClient
     class Observer
       def update(_time, result, ex)
         if result
-          Rails.logger.info "Execution successfully returned #{result}\n"
+          Rails.logger.debug "Execution successfully returned #{result}\n"
         elsif ex.is_a?(Concurrent::TimeoutError)
           Rails.logger.fatal "Execution timed out\n"
         else
